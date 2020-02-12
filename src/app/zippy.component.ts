@@ -13,7 +13,7 @@ import { CapitalizePipe } from './capitalize.pipe';
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.ShadowDom,
-  selector: 'zippy-element',
+  selector: 'zippy-component',
   template: `
     <button zippyButton (zippyClick)="onToggle()">
       {{label | capitalize}}

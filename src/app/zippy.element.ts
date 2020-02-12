@@ -12,7 +12,12 @@ export class ZippyElement extends HTMLElement {
   constructor() {
     super();
 
-    this.component = ɵrenderComponent(ZippyComponent, { host: this });
+    const host = document.createElement('zippy-component');
+
+    this.component = ɵrenderComponent(ZippyComponent, { host: host });
+
+    const shadowRoot = this.attachShadow({ mode: 'open' });
+    shadowRoot.appendChild(host);
   }
 
   attributeChangedCallback(name: keyof ZippyComponent, oldValue: any, newValue: any) {
